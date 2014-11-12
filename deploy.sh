@@ -124,7 +124,7 @@ fi
 
 # 4. Run grunt
 if [ -e "$DEPLOYMENT_SOURCE/Gruntfile.js" ]; then
-  eval $NPM_CMD install grunt
+  eval $NPM_CMD install grunt grunt-contrib-uglify grunt-contrib-jshint grunt-contrib-clean grunt-contrib-watch grunt-contrib-less grunt-concurrent grunt-nodemon grunt-newer grunt-contrib-copy
   exitWithMessageOnError "installing grunt failed"
   ./node_modules/.bin/grunt --no-color build
   exitWithMessageOnError "grunt failed"
