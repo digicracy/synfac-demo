@@ -24,7 +24,8 @@ app.config = config;
 app.server = http.createServer(app);
 
 //setup mongoose
-app.db = mongoose.createConnection(config.mongodb.uri);
+dbopts ={server:{socketOptions:{ keepAlive: 1 }},replset:{socketOptions:{ keepAlive: 1 }}};
+app.db = mongoose.createConnection(config.mongodb.uri,dbopts);
 app.db.on('error', console.error.bind(console, 'mongoose connection error: '));
 app.db.once('open', function () {
   //and... we have a data store
