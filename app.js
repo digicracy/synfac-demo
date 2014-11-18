@@ -42,7 +42,7 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
 
 //middleware
-//app.use(require('morgan')('dev'));
+app.use(require('morgan')('dev'));
 app.use(require('compression')());
 //app.use(require('serve-static')(path.join(__dirname, 'public')));
 app.use(require('method-override')());
